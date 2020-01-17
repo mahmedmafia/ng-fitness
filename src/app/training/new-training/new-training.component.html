@@ -1,0 +1,22 @@
+<section class="new-training" fxLayout="row" fxLayoutAlign="center">
+    <mat-card fxFlex.xs="100%" fxFlex="400px">
+    <mat-card-header fxLayoutAlign="center">
+        <mat-card-title >Time To Start Workout</mat-card-title>
+    </mat-card-header>
+    <mat-card-content  fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field>
+        <mat-select placeholder="Choose Excercies" [(ngModel)]="selectedExcercise">
+            <mat-option *ngFor="let excercise of Excercies" [value]="excercise">
+                    {{excercise.name}}
+            </mat-option>
+        </mat-select>
+        </mat-form-field>
+        <!-- <p>Name:{{selectedExcercise.id}}</p>
+        <p>duration:{{selectedExcercise.id}}</p> -->
+
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="center">
+        <button mat-button type="submit" (click)="onStartTraining()">start</button>
+    </mat-card-actions>
+</mat-card>
+</section>

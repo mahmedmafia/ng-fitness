@@ -1,0 +1,19 @@
+    <mat-toolbar color="primary">
+      <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSideNav()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div> <a routerLink="/">Logo</a></div>
+      <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.xs>
+        <ul fxLayout="row" fxLayoutGap="10px">
+            <li>
+              <a routerLink="/signup" *ngIf="!isAuth">signup</a>
+            </li>
+            <li><a routerLink="/login" *ngIf="!isAuth">login</a></li>
+          <li><a routerLink="/training">training</a></li>
+
+          <li><a (click)="Logout()" style="cursor: pointer;" *ngIf="isAuth">Logout</a></li>         
+        </ul>
+      </div>
+    </mat-toolbar>
